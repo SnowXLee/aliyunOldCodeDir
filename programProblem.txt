@@ -1,0 +1,8 @@
+1、阿里云ubuntu18.04
+  1.git
+    (1)git clone https://(.*)报错
+	fatal: Out of memory, malloc failed (tried to allocate 4242880000 bytes)
+    root@iZbp1j78tzhy4lysa0krg2Z:/opt/code# fatal: not a git repository: '/opt/code/aliyunOldCodeDir/.git'
+	解决方法:
+	①git init创建git仓库
+    ②①方法不行考虑git 不支持https将https换成git再clone一次
