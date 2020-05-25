@@ -1,0 +1,24 @@
+ 45     """
+ 46     12bit uint„ÿpÿÄÿÉÿ8ÿ0ÿ16bitÿÿlÿ0ÿ-32767-32868
+ 47     """
+ 48     #(ÿfloat32»ÿİÿXÿ
+ 49     pcmDataU12bit_f = pcmData12Bit.astype(numpy.float32)
+ 50     #Šÿ12bit„ÿÇÿ7ÿpÿnÿÉÿ8ÿ0ÿ16bit
+ 51     pcmDataU16bit_f = pcmDataU12bit_f * 16
+ 52     #lÿ:ÿ-32768 - 32767 < cÿÄÿpcmpÿnÿ
+ 53     pcmData16bit_f = pcmDataU16bit_f - 32768
+ 54
+ 55     outPath = "//opt//code//pythonCode//1.wav"
+ 56     wavSetOyt(outPath, pcmData16bit_f, rate)
+ 57
+ 58   conn.close()
+ 59
+ 60 sock_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+ 61 sock_tcp.bind(("0.0.0.0", 8000))
+ 62 sock_tcp.listen(100)
+ 63 while 1:
+ 64   print("listening")
+ 65   conn, addr = sock_tcp.accept()
+ 66   _thread.start_new_thread(tcplink, (conn, addr))
+server1.py                                                    66,37          Bot
+
