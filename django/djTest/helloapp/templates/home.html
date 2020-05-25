@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="wf-puristaweb-n4-active wf-puristaweb-i4-active wf-puristaweb-n7-active wf-puristaweb-i7-active wf-sofiapro-n4-active wf-sofiapro-n6-active wf-sofiapro-n1-active wf-active">
+<head>    
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Immersive weather">
+  <title>智能台灯</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="{% static '/img/apple-touch/57x57.png' %}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{% static '/img/apple-touch/60x60.png' %}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static '/img/apple-touch/72x72.png' %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static '/img/apple-touch/76x76.png' %}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static '/img/apple-touch/114x114.png' %}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static '/img/apple-touch/120x120.png' %}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{% static '/img/apple-touch/144x144.png' %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static '/img/apple-touch/152x152.png' %}">
+  <link href="{% static '/css/animate.css' %}" type="text/css" rel="stylesheet">
+  <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all">
+  <link href="{% static '/css/icons.min.css' %}" rel="stylesheet" type="text/css" media="all">
+  <link href="{% static '/css/styles.css' %}" rel="stylesheet" type="text/css" media="all">
+  <link href="{% static '/css/themify-icons.css' %}" rel="stylesheet" type="text/css" media="all">
+  <script type="text/javascript">try{ clicky.init(100990860); }catch(e){}</script>
+</head>
+
+<body>
+  <div class="main-container">
+    <section class="features hero bg-dark">
+      <div class="container">
+        <div class="row v-align-children">
+          <div class="col-md-6 col-sm-6 text-center">
+            <div class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 1s; animation-name: fadeIn;">
+              <h3>智能台灯</h3>
+            </div>
+            <div class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 1.5s; animation-name: fadeIn;">
+              <p class="lead">智能控制</p>
+            </div>
+            <div class="wow fadeInUp" data-wow-duration="3s" data-wow-delay="2s" style="visibility: visible; animation-duration: 3s; animation-delay: 2s; animation-name: fadeInUp;">
+              <button class="btn" style="background-color: #2D2D2D;" onclick="reset()">复位</button>
+            </div>
+            <div class="wow fadeInUp" data-wow-duration="3s" data-wow-delay="2s" style="visibility: visible; animation-duration: 3s; animation-delay: 2s; animation-name: fadeInUp;">
+              <button class="btn" style="background-color: #2D2D2D;" onclick="onLight()">开灯</button>
+            </div>
+            <div class="wow fadeInUp" data-wow-duration="3s" data-wow-delay="2s" style="visibility: visible; animation-duration: 3s; animation-delay: 2s; animation-name: fadeInUp;">
+              <button class="btn" style="background-color: #2D2D2D;" onclick="offLight()">关灯</button>
+            </div>
+            <div class="wow fadeInUp" data-wow-duration="3s" data-wow-delay="2s" style="visibility: visible; animation-duration: 3s; animation-delay: 2s; animation-name: fadeInUp;">
+              <button class="btn" style="background-color: #2D2D2D;" onclick="humanInfrared()">红外</button>
+            </div>
+            <div class="wow fadeInUp" data-wow-duration="3s" data-wow-delay="2s" style="visibility: visible; animation-duration: 3s; animation-delay: 2s; animation-name: fadeInUp;">
+              <button class="btn" style="background-color: #2D2D2D;" onclick="infrared()">遥控</button>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 text-center">
+            <div class="wow fadeIn" data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-name: fadeIn;">
+              <img alt="SHRN° New York" src="{% static '/img/shrn-today.png' %}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features views bg-dark">
+      <div class="container">
+        <div class="row v-align-children">
+          <div class="col-sm-6 text-center feature">
+            <div class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s" style="visibility: hidden; animation-duration: 2s; animation-delay: 0.5s; animation-name: none;">
+              <img alt="SHRN° Ozone" src="{% static '/img/shrn-details.png' %}">
+            </div>
+           </div>
+          <div class="col-sm-6 text-center feature">
+            <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.5s" style="visibility: hidden; animation-duration: 2s; animation-delay: 0.5s; animation-name: none;">
+              <img alt="SHRN° Forecast" src="{% static '/img/shrn-forecast.png' %}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+      
+  <script src="{% static '/js/jquery.min.js' %}"></script>
+  <script src="{% static '/js/wow.min.js' %}"></script>
+
+  <script>
+    new WOW().init();
+  </script>
+
+  <script type="text/javascript">
+    var defaultURL = "http://116.62.112.145:8000/"  //初始django网址
+    function myDefault(){
+      window.location = defaultURL;  //重置当前网址
+    }
+    function reset(){
+      window.location = defaultURL + "reset/";  //重置当前网址 重置esp32端口的状态
+    }
+    function onLight(){
+      window.location = defaultURL + "on/";  //开灯
+    }
+    function offLight(){
+      window.location = defaultURL + "off/";  //关灯
+    }
+    function humanInfrared(){
+      window.location = defaultURL + "human/";  //人体红外
+    }
+    function infrared(){
+      window.location = defaultURL + "infrared/";  //遥控
+    }
+  </script>
+</body>
+</html>
