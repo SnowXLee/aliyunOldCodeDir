@@ -1,0 +1,10 @@
+var StringDecoder = require('string_decoder').StringDecoder;
+var decoder = new StringDecoder('utf8');
+var numbers = new Buffer("1234568789");
+console.log(decoder.write(numbers));
+var slice = numbers.slice(3, 6);
+console.log(decoder.write(slice));
+slice[0] = '#'.charCodeAt(0);
+slice[slice.length-1] = '#'.charCodeAt(0);
+console.log(decoder.write(slice));
+console.log(numbers.toString());
